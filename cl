@@ -37,10 +37,10 @@ case $1 in
   help='This is just a wrapper around bc calculator to make it\n
      easier to use for small time calculations \n\n
      you can use the following mnemonics for:\n\n
-      - adiction (sum,sums,plus,mais)\n
-      - subtraction (min,minus,menos)\n
-      - multiplication (mul,mult,multiply,multiplyes,multiplies)\n
-      - division (div,divs,divide,didvides,divided,divided bydividido)\n
+      - addition (A,sum,sums,plus,mais ...)\n
+      - subtraction (S,min,minus,menos ...)\n
+      - multiplication (M,mul,mult,multiply,multiplyes,multiplies ...)\n
+      - division (D,div,divs,divide,didvides,divided,divided bydividido ...)\n
      \n
      This wrapper script was done to prevent shell interpretation of asterisk character as a glob/wildcard.
      \n
