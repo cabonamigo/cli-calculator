@@ -27,7 +27,7 @@ case $1 in
 "")
   echo -e 'We need a basic equation to process, it can be either:\n\n
     - subtraction\n
-    - adiction\n
+    - addition\n
     - multiplication\n
     - division\n
   '
@@ -42,24 +42,21 @@ case $1 in
       - multiplication (mul,mult,multiply,multiplyes,multiplies)\n
       - division (div,divs,divide,didvides,divided,divided bydividido)\n
      \n
-     This wrapper was done to prevent shell interpretation of asterisk character as a glob/wildcard.
+     This wrapper script was done to prevent shell interpretation of asterisk character as a glob/wildcard.
      \n
-     Other characters still get interpreted and or evalueted by bash or perhaps the 
-     \n
-     shell you are using right now.
-     \n
-     The operations do not work, PERHAPS, in the same way that the menmonics imply. \n
+     Other characters still get interpreted and or evalueted by bash 
      \n\n
-  '  echo -e "$help"
+  '
+  echo -e "$help"
   exit
 ;;
 -r|--result)
 #echo "case RESULT"
-result $@
-exit
+  result $@
+  exit
 ;;
 *)
-#echo "case MAIN"
-if [ "$1" != " " ];then main;fi
-exit
+  #echo "case MAIN"
+  if [ "$1" != " " ];then main;fi
+  exit
 esac
