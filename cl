@@ -42,15 +42,14 @@ case $1 in
       - multiplication (mul,mult,multiply,multiplyes,multiplies)\n
       - division (div,divs,divide,didvides,divided,divided bydividido)\n
      \n
-     This wrapper was done to prevent shell interpretation of * as a glob/wildcard.
+     This wrapper was done to prevent shell interpretation of asterisk character as a glob/wildcard.
      \n
      Other characters still get interpreted and or evalueted by bash or perhaps the 
      \n
      shell you are using right now.
      \n
      The operations do not work, PERHAPS, in the same way that the menmonics imply. \n
-     Good luck, god bless your little heart. \n\n
-     Fin ...\n\n
+     \n\n
   '  echo -e "$help"
   exit
 ;;
