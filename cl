@@ -8,7 +8,7 @@ liner=$(echo "$@" | \
    sed -E "s/\×/\*/g" | \
    sed -E "s/\-r//g" | \
    sed -E "s/(A|add|sum|sums|plus|mais|soma|somado|somados)/\+/g"| \
-   sed -E "s/(S|sub|subtract|min|minus|menos|subtraido|subtraido de)/\-/g" | \
+   sed -E "s/(S|sub|subtract|min|minus|menos|menas|subtraido|subtraido de)/\-/g" | \
    sed -E "s/(M|mul|mult|multi|times|vezes|multiply|multiplies|multiplicado)/\*/g" | \
    sed -E "s/(D|div|divs|divide|divides|divided|divided by|dividido|dividido por)/\//g"
 )
