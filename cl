@@ -27,15 +27,16 @@ liner=$(echo "$@" | \
    $ed -E "s/\³/ \^ 3 /g" | \
    $ed -E "s/\²/ \^ 2 /g" | \
    $ed -E "s/\¹/ \^ 1 /g" | \
-   $ed -E "s/(r|\-r|\-\-result)//g" | \
-   $ed -E "s/(s|\-s|\-\-sameline)//g" | \
-   $ed -E "s/^\s//g" | \
    $ed -E "s/(R|rem|remider|mod|modulo)/\%/g"| \
    $ed -E "s/(E|exp|exponen|exponetiation)/\^/g"| \
    $ed -E "s/(A|add|sum|sums|plus|mais|moar)/\+/g"| \
    $ed -E "s/(S|sub|subtract|min|minus|menos|menas)/\-/g" | \
    $ed -E "s/(M|mul|mult|multi|times|vezes|multiply|multiplys|multiplies)/\*/g" | \
-   $ed -E "s/(D|div|divs|divide|divides|divided|divided by|dividido|dividido por)/\//g"
+   $ed -E "s/(D|div|divs|divide|divides|divided|divided by|dividido|dividido por)/\//g" | \
+   $ed -E "s/(r|result|\-r|\-\-result)//g" | \
+   $ed -E "s/(s|sameline|\-s|\-\-sameline)//g" | \
+   $ed -E "s/^\s//g" 
+
 )
 
 function result(){
@@ -67,7 +68,7 @@ case $1 in
   exit
 ;;
 
-h|help|-h|--help)
+h|help|-h|-help|--help)
   help='
   cl -  A simple cli calculator script around bc
 
@@ -85,8 +86,8 @@ h|help|-h|--help)
 
      You can also use the following flags:
 
-     -r or --result		it shows just the result in a new line
-     -s or --sameline		it shows equation and result in the same line
+     r, -r or --result		it shows just the result in a new line
+     s, -s or --sameline		it shows equation and result in the same line
 
      The default behavior is to show equation in a new line and result in another new line.
      This wrapper was done to prevent shell interpretation of '*' as a glob/wildcard.
@@ -97,17 +98,17 @@ h|help|-h|--help)
   exit
 ;;
 
-r|-r|--result) # shows just the result in a new line
+r|result|-r|--result) # shows just the result in a new line
   result
   exit
 ;;
 
-s|-s|--sameline) # shows equation and result in same line
+s|sameline|-s|--sameline) # shows equation and result in same line
   sameline
   exit
 ;;
 
-*) #shows equation in one line and result in a new line
+*) #shows equation in one line and result in another new line
   normal
   exit
 esac
