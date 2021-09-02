@@ -1,2 +1,2 @@
 # cli-calculator
-a bash script and sed that uses bc as an internal  command to do some calculations, got tired to rewrite this little script
+a bash script that uses sed, bc and other utilities to do some simple calculations, got tired to rewrite this little script.
